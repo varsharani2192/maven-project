@@ -1,0 +1,36 @@
+pipeline
+{
+	agent any
+	stages
+	{
+		stage{
+			steps
+			{
+			
+				git branch:'master', url:'https://github.com/santoshdeshmane06/maven-project.git'
+			}	
+		stage('prallel job')
+		parallel{
+		
+		stage('compile')
+		{
+			steps
+			{
+				withMaven(maven : 'LocalMaven') 
+                {   
+                    sh 'mvn compile' 
+                }
+			}
+		}
+		stage('print hi')
+		{
+			steps
+			{
+				withMaven(maven : 'LocalMaven')
+                {
+                    sh 'mvn package'
+                }
+			}
+		}
+	}
+}
