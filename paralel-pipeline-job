@@ -19,7 +19,7 @@ pipeline
 		{
 			steps
 			{
-				withMaven(maven : 'LocalMaven') 
+				withMaven(maven : 'localmaven') 
                 {   
                     sh 'mvn compile' 
                 }
@@ -29,7 +29,7 @@ pipeline
 		{
 			steps
 			{
-				withMaven(maven : 'LocalMaven')
+				withMaven(maven : 'localmaven')
                 {
                     sh 'mvn package'
                 }
