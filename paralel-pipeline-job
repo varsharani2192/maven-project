@@ -20,9 +20,9 @@ pipeline
 			steps
 			{
 				withMaven(maven : 'localmaven') 
-                {   
-                    sh 'mvn compile' 
-                }
+                		{   
+                    			sh 'mvn compile' 
+               			 }
 			}
 		}
 		stage('Package')
@@ -30,13 +30,13 @@ pipeline
 			steps
 			{
 				withMaven(maven : 'localmaven')
-                {
-                    sh 'mvn package'
-                }
+               			 {
+                 			   sh 'mvn package'
+               			 }
 			}
 		}
 		}
-		failfast:true
 		}
+	failfast:true
 	}
 }
