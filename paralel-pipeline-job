@@ -3,13 +3,16 @@ pipeline
 	agent any
 	stages
 	{
-		stage{
+		stage
+		{
 			steps
 			{
 			
 				git branch:'master', url:'https://github.com/santoshdeshmane06/maven-project.git'
 			}	
+		}
 		stage('prallel job')
+		{
 		parallel{
 		
 		stage('compile')
@@ -31,6 +34,8 @@ pipeline
                     sh 'mvn package'
                 }
 			}
+		}
+		}
 		}
 	}
 }
