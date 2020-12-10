@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage ('clone the repo')
         {
-            steps{git 'https://github.com/santoshdeshmane06/maven-project.git'}
+            steps{ git branch:'master', url:'https://github.com/santoshdeshmane06/maven-project.git'}
         }
         stage ('Build teh package')
         {
