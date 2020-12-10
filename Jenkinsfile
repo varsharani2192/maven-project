@@ -8,7 +8,7 @@ pipeline{
         stage ('Build teh package')
         {
             steps{ 
-                withMavenwithMaven(jdk: 'locakjdk', maven: 'localmaven') 
+               withMaven(jdk: 'locakjdk', maven: 'localmaven') 
                 {
                     sh 'mvn package'
                 }
