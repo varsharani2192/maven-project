@@ -14,11 +14,11 @@ pipeline{
                 }
                 }
         }
-        stage (archive the artifact)
+        stage ('archive the artifact')
         {
             steps{ archiveArtifacts artifacts: '**/*.war', followSymlinks: false}
         }
-        stage ( deploy to container)
+        stage ( 'deploy to container')
         {
             steps{
                 deploy adapters: [tomcat7(credentialsId: 'tomcat', path: '', url: 'http://18.220.127.6/')], contextPath: '/var/lib/tomcat/webapps', war: '**/*.war'
