@@ -21,7 +21,7 @@ pipeline{
         stage ( 'deploy to container')
         {
             steps{
-                deploy adapters: [tomcat7(credentialsId: 'tomcat', path: '', url: 'http://18.220.127.6:8080/')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat7(credentialsId: 'tomcat', path: '', url: 'http://18.189.17.19:8080/')], contextPath: null, war: '**/*.war'
             }
         }
     }
