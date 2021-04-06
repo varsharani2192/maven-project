@@ -13,17 +13,15 @@ pipeline
     {
       steps{
           withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') {
-            sh 'mvn compile'
-}
-      }
-      
-  }
+            sh 'mvn compile'}
+           }     
+    }
     stage('please test code')
     {
       steps{
           withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') {
-            sh 'mvn test'
-}
-      }
-    }
+            sh 'mvn test'}
+          }
+     }
+ }
 }
