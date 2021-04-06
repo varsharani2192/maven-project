@@ -23,7 +23,7 @@ pipeline
             sh 'mvn test'}
           }
      }
-    stage('please package code')
+    stage('please build code')
     {
       steps{
           withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') {
