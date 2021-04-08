@@ -36,7 +36,7 @@ pipeline
             steps
                 {
                     sshagent(['f61345e7-1fe8-40c2-b264-74a7fc33c1f9']) {
-                    sh 'ssh -o StrictHostKeyChecking=no */target/webapp.war ec2-user@172.31.24.68:/var/lib/tomcat/webapps/'
+                    sh 'scp -o StrictHostKeyChecking=no */target/webapp.war ec2-user@172.31.24.68:/var/lib/tomcat/webapps/'
                     }
                 }
           }
